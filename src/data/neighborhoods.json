@@ -279,9 +279,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Unclaimed neighborhood",
-        "fill": [100, 100, 100, 60],
-        "stroke": [100, 100, 100, 60]
+        "name": "Neighborhood lacking producers",
+        "fill": [200, 100, 100, 60],
+        "stroke": [200, 100, 100, 60]
       },
       "geometry": {
         "type": "Polygon",
@@ -394,7 +394,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Unclaimed neighborhood",
+        "name": "Neighborhood lacking consumers",
         "fill": [100, 100, 100, 60],
         "stroke": [100, 100, 100, 60]
       },

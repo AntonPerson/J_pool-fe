@@ -34,7 +34,7 @@ function App() {
     minPitch: 0,
     minZoom: 0,
     pitch: 41.51658767772512,
-    zoom: 16,
+    zoom: 14,
   });
   const [tooltip, setTooltip] = useState({
     object: null,
