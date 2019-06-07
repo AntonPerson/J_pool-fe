@@ -1,5 +1,10 @@
 [![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/AntonPerson/J_pool-fe)
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+#J pool (p2p energy trading)
+
+- Live demo [http://jpool.now.sh](http://jpool.now.sh)
+- Uses React, deck.gl and vis.gl
+- This is just a quick & dirty prototype / POC
 
 ## Available Scripts
 
