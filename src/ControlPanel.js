@@ -35,13 +35,23 @@ export function Tooltip(props) {
   return object ? (
     object.from && object.to ? (
       <div style={{ position: 'relative' }}>
+        <h3>Relative production/consumption</h3>
         from <span style={{color: 'green'}}><b>{ object.from.name }</b></span> ({ object.from.address})<br/>
         to <span style={{color: 'red'}}><b>{ object.to.name }</b></span> ({object.to.address })
         <ChartTime />
       </div>
-    ) : (object.properties && object.properties.elevation ? (<ChartDifference />) : (<div><ChartHeatmap /></div>))
+    ) : (
+      <div>
+        <h3>{ object && object.type === 'Feature' ? object.properties && object.properties.name : '#J_pool' }</h3>
+        {object.properties && object.properties.elevation ? (<ChartDifference />) : (<div><ChartHeatmap /></div>)}
+      </div>
+    )
   ) : (
-    <div>Please select a neighborhood or a connection<br/>to show more information</div>
+    <div>
+      <h3>Welcome to #J_pool</h3>
+      <div>Please select a neighborhood, building or connection to show more information</div>
+    </div>
+
   );
 }
 
@@ -133,7 +143,6 @@ export default class StyleControls extends PureComponent {
 
     return (
       <Container>
-        <h3>{ tooltip && tooltip.object && tooltip.object.type === 'Feature' ? tooltip.object.properties && tooltip.object.properties.name : '#J_pool' }</h3>
         <Tooltip {...tooltip} />
         {/* <div className="source-link">
           <a
