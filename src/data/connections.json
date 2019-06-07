@@ -1,0 +1,65 @@
+[
+  {
+    "inbound": [0, 255, 0, 200],
+    "outbound": [255, 0, 0, 200],
+    "width": 8,
+     "from": {
+      "name": "LITEXPO 5 Sale",
+      "address": "Laisvės pr. 5, Vilnius 04215",
+        "coordinates": [
+           54.678688,
+           25.226252
+        ]
+     },
+     "to": {
+        "name": "User 1",
+        "address": "Šaltūnų g. 31A, Vilnius 04132",
+        "coordinates": [
+           54.68007,
+           25.22738
+        ]
+     }
+  },
+  {
+    "inbound": [0, 255, 0, 150],
+    "outbound": [255, 0, 0, 150],
+    "width": 18,
+    "from": {
+      "name": "LITEXPO 5 Sale",
+      "address": "Laisvės pr. 5, Vilnius 04215",
+        "coordinates": [
+           54.678688,
+           25.226252
+        ]
+     },
+     "to": {
+        "name": "User 2",
+        "address": "Šaltūnų g. 35, Vilnius 04132",
+        "coordinates": [
+           54.67928,
+           25.228085
+        ]
+     }
+  },
+  {
+    "inbound": [0, 255, 0, 170],
+    "outbound": [0, 255, 0, 170],
+    "width": 10,
+    "from": {
+        "name": "LITEXPO 5 Sale",
+        "address": "Laisvės pr. 5, Vilnius 04215",
+        "coordinates": [
+           54.678688,
+           25.226252
+        ]
+     },
+     "to": {
+        "name": "LITEXPO",
+        "address": "Laisvės pr. 5, Vilnius 04215",
+        "coordinates": [
+          54.678831,
+          25.224126
+        ]
+     }
+  }
+]
