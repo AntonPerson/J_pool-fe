@@ -1,7 +1,7 @@
 [
   {
-    "inbound": [0, 255, 0, 200],
-    "outbound": [255, 0, 0, 200],
+    "outbound": [0, 255, 0, 200],
+    "inbound": [255, 0, 0, 200],
     "width": 8,
      "from": {
       "name": "LITEXPO 5 Sale",
@@ -21,8 +21,8 @@
      }
   },
   {
-    "inbound": [0, 255, 0, 150],
-    "outbound": [255, 0, 0, 150],
+    "outbound": [0, 255, 0, 200],
+    "inbound": [255, 0, 0, 200],
     "width": 18,
     "from": {
       "name": "LITEXPO 5 Sale",

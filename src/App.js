@@ -48,8 +48,8 @@ function App() {
       getWidth: d => d.width || 16,
       getSourcePosition: d => [d.from.coordinates[1], d.from.coordinates[0]],
       getTargetPosition: d => [d.to.coordinates[1], d.to.coordinates[0]],
-      getSourceColor: d => d.inbound || [0, 255, 0, 150], // green
-      getTargetColor: d => d.outbound || [255, 0, 0, 150], // red
+      getSourceColor: d => d.outbound || [0, 255, 0, 150], // green
+      getTargetColor: d => d.inbound || [255, 0, 0, 150], // red
       onClick: t => setTooltip(t),
     }),
 
