@@ -5,7 +5,10 @@ import ReactMapGL from 'react-map-gl';
 import DeckGL from '@deck.gl/react';
 import {ArcLayer, PolygonLayer} from '@deck.gl/layers';
 import {StaticMap} from 'react-map-gl';
+
 import 'mapbox-gl/src/css/mapbox-gl.css';
+import '../node_modules/react-vis/dist/style.css';
+
 
 import ControlPanel from './ControlPanel';
 

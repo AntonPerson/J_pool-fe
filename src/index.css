@@ -32,7 +32,13 @@ code {
 .control-panel-footer {
   position: absolute;
   width: 300px;
-  bottom: 0;
+  bottom: -30px;
+}
+
+.control-panel-footer-list {
+  margin-bottom: 12px;
+  padding-top: 12px;
+  background: #fff;
 }
 
 @media only screen and (max-width: 600px) {

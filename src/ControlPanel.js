@@ -2,6 +2,12 @@ import React, {PureComponent} from 'react';
 import {fromJS} from 'immutable';
 import MAP_STYLE from './data/map-style-basic-v8.json';
 
+import ChartDifference from './ChartDifference';
+import ChartZoomable from './ChartZoomable';
+import ChartTime from './ChartTime';
+import ChartComposition from './ChartComposition';
+import ChartHeatmap from './ChartHeatmap';
+
 const defaultMapStyle = fromJS(MAP_STYLE);
 
 const categories = ['labels', 'roads', 'buildings', 'parks', 'water', 'background'];
@@ -28,15 +34,12 @@ export function Tooltip(props) {
   const {  object } = props || {};
   return object ? (
     object.from && object.to ? (
-      <div>
-        from { object.from.name } ({ object.from.address})<br/>
-        to { object.to.name } ({object.to.address })
+      <div style={{ position: 'relative' }}>
+        from <span style={{color: 'green'}}><b>{ object.from.name }</b></span> ({ object.from.address})<br/>
+        to <span style={{color: 'red'}}><b>{ object.to.name }</b></span> ({object.to.address })
+        <ChartTime />
       </div>
-    ) : (
-      <div>
-        { object.type === 'Feature' && object.properties && object.properties.name }
-      </div>
-    )
+    ) : (object.properties && object.properties.elevation ? (<ChartDifference />) : (<div><ChartHeatmap /></div>))
   ) : (
     <div>Please select a neighborhood or a connection<br/>to show more information</div>
   );
@@ -130,7 +133,7 @@ export default class StyleControls extends PureComponent {
 
     return (
       <Container>
-        <h3>#J_pool</h3>
+        <h3>{ tooltip && tooltip.object && tooltip.object.type === 'Feature' ? tooltip.object.properties && tooltip.object.properties.name : '#J_pool' }</h3>
         <Tooltip {...tooltip} />
         {/* <div className="source-link">
           <a
@@ -141,8 +144,7 @@ export default class StyleControls extends PureComponent {
           </a>
         </div> */}
         <footer className="control-panel-footer">
-          <hr />
-          { this.state.customize ? categories.map(name => this._renderLayerControl(name)) : null }
+          { this.state.customize ? (<div class="control-panel-footer-list">{categories.map(name => this._renderLayerControl(name))}</div>) : null }
           <button onClick={() => this.setState({ customize: !this.state.customize })}>
             { !this.state.customize ? 'Customize' : 'Save' }
           </button>
