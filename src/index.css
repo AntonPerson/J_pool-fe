@@ -33,7 +33,19 @@ code {
   position: absolute;
   width: 300px;
   bottom: 0;
-  padding-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .control-panel {
+    width: auto;
+    max-width: 90vw;
+    left: 0;
+    min-height: auto;
+    padding: 6px 12px;
+  }
+  .control-panel-footer {
+    position: static;
+  }
 }
 
 label {
