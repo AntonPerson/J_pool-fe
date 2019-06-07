@@ -31,19 +31,19 @@ const colorClass = {
 };
 
 export function Tooltip(props) {
-  const {  object } = props || {};
+  const { object } = props || {};
   return object ? (
     object.from && object.to ? (
       <div style={{ position: 'relative' }}>
         <h3>Relative production/consumption</h3>
-        from <span style={{color: 'green'}}><b>{ object.from.name }</b></span> ({ object.from.address})<br/>
-        to <span style={{color: 'red'}}><b>{ object.to.name }</b></span> ({object.to.address })
+        from <span style={{color: '#12939A'}}><b>{ object.from.name }</b></span> ({ object.from.address})<br/>
+        to <span style={{color: '#FFA54F'}}><b>{ object.to.name }</b></span> ({object.to.address })
         <ChartTime />
       </div>
     ) : (
       <div>
         <h3>{ object && object.type === 'Feature' ? object.properties && object.properties.name : '#J_pool' }</h3>
-        {object.properties && object.properties.elevation ? (<ChartDifference />) : (<div><ChartHeatmap /></div>)}
+        {object.properties && object.properties.elevation ? (<ChartDifference />) : (<div><ChartHeatmap data={object && object.properties && object.properties.data}/></div>)}
       </div>
     )
   ) : (
@@ -157,6 +157,7 @@ export default class StyleControls extends PureComponent {
           <button onClick={() => this.setState({ customize: !this.state.customize })}>
             { !this.state.customize ? 'Customize' : 'Save' }
           </button>
+          { tooltip && tooltip.object && <button onClick={() => this.props.onClose && this.props.onClose(null) }>Close</button> }
           { this.state.customize ? (<button onClick={() => {
               this.setState({ customize: !this.state.customize });
               this.props.onChange('mapbox://styles/jpool/cjwl9f7270ovf1cqh1kyn8som');

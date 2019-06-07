@@ -12,7 +12,7 @@ import {
 const MSEC_DAILY = 86400000;
 
 export default function ChartTime(props) {
-  const timestamp = new Date('September 9 2017').getTime();
+  const timestamp = new Date().getTime();
   return (
     <XYPlot xType="time" width={300} height={300}>
       <HorizontalGridLines />
@@ -20,7 +20,7 @@ export default function ChartTime(props) {
       <XAxis title="X Axis" />
       <YAxis title="Y Axis" />
       <LineSeries
-        color="green"
+        color="#12939A"
         data={[
           {x: timestamp + MSEC_DAILY, y: 3},
           {x: timestamp + MSEC_DAILY * 2, y: 5},
@@ -30,7 +30,7 @@ export default function ChartTime(props) {
       />
       <LineSeries data={null} />
       <LineSeries
-        color="red"
+        color="#FFA54F"
         data={[
           {x: timestamp + MSEC_DAILY, y: 10},
           {x: timestamp + MSEC_DAILY * 2, y: 4},
