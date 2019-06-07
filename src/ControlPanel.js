@@ -3,9 +3,7 @@ import {fromJS} from 'immutable';
 import MAP_STYLE from './data/map-style-basic-v8.json';
 
 import ChartDifference from './ChartDifference';
-import ChartZoomable from './ChartZoomable';
 import ChartTime from './ChartTime';
-import ChartComposition from './ChartComposition';
 import ChartHeatmap from './ChartHeatmap';
 
 const defaultMapStyle = fromJS(MAP_STYLE);
@@ -79,9 +77,6 @@ export default class StyleControls extends PureComponent {
   };
   _defaultLayers = defaultMapStyle.get('layers');
 
-  componentDidMount() {
-    // this._updateMapStyle(this.state);
-  }
 
   _onColorChange(name, event) {
     const color = {...this.state.color, [name]: event.target.value};
@@ -144,14 +139,14 @@ export default class StyleControls extends PureComponent {
     return (
       <Container>
         <Tooltip {...tooltip} />
-        {/* <div className="source-link">
+        <div className="source-link">
           <a
-            href="https://github.com/uber/react-map-gl/tree/3.2-release/examples/layers"
+            href="https://github.com/AntonPerson/J_pool-fe"
             target="_new"
           >
             View Code ↗
           </a>
-        </div> */}
+        </div>
         <footer className="control-panel-footer">
           { this.state.customize ? (<div class="control-panel-footer-list">{categories.map(name => this._renderLayerControl(name))}</div>) : null }
           <button onClick={() => this.setState({ customize: !this.state.customize })}>

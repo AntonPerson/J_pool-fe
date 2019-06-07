@@ -3,7 +3,7 @@ import './App.css';
 
 import ReactMapGL from 'react-map-gl';
 import DeckGL from '@deck.gl/react';
-import {ArcLayer, PolygonLayer, IconLayer} from '@deck.gl/layers';
+import {ArcLayer, PolygonLayer} from '@deck.gl/layers';
 import {StaticMap} from 'react-map-gl';
 
 import 'mapbox-gl/src/css/mapbox-gl.css';
@@ -19,34 +19,6 @@ import buildings from './data/buildings.json';
 
 const MAPBOX_ACCESS_TOKEN = process.env.MapboxAccessToken
   || 'pk.eyJ1IjoianBvb2wiLCJhIjoiY2p3a3RtMXM1MDA4ZTQzcWpwcTMzODQ5cSJ9.fUQlACZ8DGi-nHoTLMpSaA';
-
-// const ICON_MAPPING = {
-//   marker: {x: 0, y: 0, width: 128, height: 256, mask: false}
-// };
-// const icons = [
-//   {
-//     "type": "Feature",
-//     "properties": { name: 'question-answer' },
-//     "geometry": {
-//       "type": "Point",
-//       "coordinates": [
-//         25.22705554962158,
-//         54.67397985537844
-//       ]
-//     }
-//   },
-//   {
-//     "type": "Feature",
-//     "properties": {},
-//     "geometry": {
-//       "type": "Point",
-//       "coordinates": [
-//         25.220961570739743,
-//         54.680778558447344
-//       ]
-//     }
-//   }
-// ];
 
 function App() {
   const [viewport, setViewport] = useState({
@@ -100,19 +72,6 @@ function App() {
       onClick: t => setTooltip(t),
     }),
 
-    // new IconLayer({
-    //   id: 'icon-layer-question',
-    //   data: icons,
-    //   pickable: true,
-    //   iconAtlas: 'images/question.png',
-    //   iconMapping: ICON_MAPPING,
-    //   getIcon: _d => 'marker',
-    //   sizeScale: 32,
-    //   getPosition: d => d.geometry && d.geometry.coordinates,
-    //   getSize: _d => 5,
-    //   // getColor: d => [Math.sqrt(d.exits), 140, 0],
-    // }),
-
     new PolygonLayer({
       id: 'buildings',
       data: buildings.features,
@@ -130,9 +89,6 @@ function App() {
       onClick: t => setTooltip(t),
     }),
   ];
-    // <header className="App-header">
-    //   <img src={logo} className="App-logo" alt="logo" />
-    // </header>
 
   return (
     <>
@@ -158,8 +114,6 @@ function App() {
           tooltip={tooltip}
           />
       </ReactMapGL>
-
-      <div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank"  rel="noopener noreferrer">CC 3.0 BY</a></div>
     </>
   );
 }
