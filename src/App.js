@@ -98,7 +98,7 @@ function App() {
       width="100vw"
       height="100vh"
       mapStyle={mapStyle}
-      onViewportChange={v => {  console.log('Viewport', v); setViewport(v);}}
+      onViewportChange={v => { setViewport(v); }}
       preventStyleDiffing={false}
       mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
     >
