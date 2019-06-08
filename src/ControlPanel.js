@@ -46,7 +46,6 @@ export function Tooltip(props) {
     )
   ) : (
     <div>
-      <h3>Welcome to #J_pool</h3>
       <div>Please select a neighborhood, building or connection to show more information</div>
     </div>
 
