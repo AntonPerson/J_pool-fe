@@ -1,10 +1,11 @@
 [![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/AntonPerson/J_pool-fe)
 
-#J pool (p2p energy trading)
+## In short
 
-- Live demo [http://jpool.now.sh](http://jpool.now.sh)
+- Live demo [http://prosume.now.sh](http://prosume.now.sh)
 - Uses React, deck.gl and vis.gl
 - This is just a quick & dirty prototype / POC
+- Started as #J pool (p2p energy trading)
 
 ## Available Scripts
 
