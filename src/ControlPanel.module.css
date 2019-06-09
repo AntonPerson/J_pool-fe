@@ -1,0 +1,54 @@
+
+.ControlPanel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 420px;
+  min-height: 320px;
+}
+
+@media only screen and (max-width: 600px) {
+  .ControlPanel {
+    width: auto;
+    max-width: 90vw;
+    left: 0;
+    min-height: auto;
+    padding: 6px 12px;
+  }
+}
+
+.box {
+  margin: 20px;
+}
+
+.filled {
+  padding: 12px 24px;
+  background: #fff;
+  color: #6b6b76;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  outline: none;
+  border-radius: 10px;
+}
+
+.toolbar {
+  margin: 0 20px;
+  padding-top: 12px;
+}
+
+.source-link {
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+
+.details {
+  font-size: 13px;
+  line-height: 2;
+}
+
+.help {
+  /* text-transform: uppercase; */
+  font-weight: 300;
+  font-variant: small-caps;
+  color: #b3b3b3;
+}

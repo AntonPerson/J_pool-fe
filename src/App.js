@@ -36,9 +36,9 @@ function App() {
     pitch: 41.51658767772512,
     zoom: 14,
   });
-  const [tooltip, setTooltip] = useState({
-    object: null,
-  });
+  const [selectedObject, setSelectedObject] = useState(null);
+  const onClick = t => setSelectedObject(t && t.object);
+
   const [mapStyle, setMapStyle] = useState('mapbox://styles/jpool/cjwl9f7270ovf1cqh1kyn8som');
 
   const layers = [
@@ -51,7 +51,7 @@ function App() {
       getTargetPosition: d => [d.to.coordinates[1], d.to.coordinates[0]],
       getSourceColor: d => d.outbound || [0, 255, 0, 150], // green
       getTargetColor: d => d.inbound || [255, 0, 0, 150], // red
-      onClick: t => setTooltip(t),
+      onClick,
     }),
 
     new PolygonLayer({
@@ -69,7 +69,7 @@ function App() {
       getLineColor: d => (d && d.properties && d.properties.stroke) || [80, 140, 80, 140],
       getLineWidth: 10,
       getRadius: 100,
-      onClick: t => setTooltip(t),
+      onClick,
     }),
 
     new PolygonLayer({
@@ -86,7 +86,7 @@ function App() {
       getFillColor: d => (d && d.properties && d.properties.fill) || [60, 140, 0, 100],
       getLineColor: d => (d && d.properties && d.properties.stroke) || [80, 80, 80],
       getLineWidth: 1,
-      onClick: t => setTooltip(t),
+      onClick,
     }),
   ];
 
@@ -109,9 +109,9 @@ function App() {
           <StaticMap mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN} mapStyle={mapStyle} />
         </DeckGL>
         <ControlPanel
+          selectedObject={selectedObject}
           onChange={setMapStyle}
-          onClose={setTooltip}
-          tooltip={tooltip}
+          onClose={() => setSelectedObject(null)}
           />
       </ReactMapGL>
     </>
