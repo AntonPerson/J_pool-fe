@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
 import './App.css';
 
-import ReactMapGL from 'react-map-gl';
+import ReactMapGL, {StaticMap, NavigationControl} from 'react-map-gl';
 import DeckGL from '@deck.gl/react';
 import {ArcLayer, PolygonLayer} from '@deck.gl/layers';
-import {StaticMap} from 'react-map-gl';
 import {ScenegraphLayer} from '@deck.gl/mesh-layers';
 import {registerLoaders} from '@loaders.gl/core';
 import {GLTFScenegraphLoader} from '@luma.gl/addons';
@@ -30,17 +29,29 @@ function App() {
   const [viewport, setViewport] = useState({
     // latitude: 54.678688,
     // longitude: 25.226252,
-    altitude: 1.5,
-    bearing: -14.858797972483709,
-    height: 969,
-    latitude: 54.68058826948631,
-    longitude: 25.227326074616954,
-    maxPitch: 60,
-    maxZoom: 24,
-    minPitch: 0,
-    minZoom: 0,
-    pitch: 41.51658767772512,
-    zoom: 14,
+
+    // altitude: 1.5,
+    // bearing: -14.858797972483709,
+    // height: 969,
+    // latitude: 54.68058826948631,
+    // longitude: 25.227326074616954,
+    // maxPitch: 60,
+    // maxZoom: 24,
+    // minPitch: 0,
+    // minZoom: 0,
+    // pitch: 41.51658767772512,
+    // zoom: 14,
+
+    "latitude":54.67978741314096,
+    "longitude":25.226679833963274,
+    "zoom":14.949430043040728,
+    "bearing":83.4931902174222,
+    "pitch":53.29921432545182,
+    "altitude":1.5,
+    "maxZoom":24,
+    "minZoom":0,
+    "maxPitch":60,
+    "minPitch":0,
   });
   const [selectedObject, setSelectedObject] = useState(null);
   const onClick = t => setSelectedObject(t && t.object);
@@ -129,6 +140,7 @@ function App() {
         >
         <DeckGL
           initialViewState={viewport}
+          viewState={viewport}
           controller={true}
           layers={layers}
           >
@@ -139,6 +151,14 @@ function App() {
           onChange={setMapStyle}
           onClose={() => setSelectedObject(null)}
           />
+        <div style={{ position: 'absolute', right: 0, bottom: 30 }}>
+          <NavigationControl onViewStateChange={v => { console.log(v && v.viewState, viewport); setViewport(v && v.viewState); }} />
+        </div>
+        <div style={{ fontSize: '9px', padding: '10px', position: 'absolute', bottom: 0}}>
+          Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a>
+          from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a>
+          is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC 3.0 BY</a>
+        </div>
       </ReactMapGL>
     </>
   );

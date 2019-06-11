@@ -39,7 +39,13 @@ export default function ControlPanel(props) {
         </>
       ) : (
         <div className={`${styles.box} ${styles.filled} ${styles.help}`}>
-          Please select a neighborhood, building or connection to show more information
+          <p>
+            Please select a neighborhood, building or connection to show more information
+          </p>
+          <p>
+            <img src="images/mouse-left-button.svg" title="left mouse button" width={25} height={25} /> to pan,
+            <img src="images/mouse-right-button.svg" title="right mouse button" width={25} height={25} /> to rotate
+          </p>
         </div>
       )}
 

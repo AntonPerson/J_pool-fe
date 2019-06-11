@@ -20,6 +20,19 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Prosume now - become a prosumer</title>
+
+    <!-- Fix mapbox icons -->
+    <style>
+      .mapboxgl-ctrl-icon.mapboxgl-ctrl-zoom-in {
+        background-image: url('./svg/mapboxgl-ctrl-zoom-in.svg') !important;
+      }
+      .mapboxgl-ctrl-icon.mapboxgl-ctrl-zoom-out {
+        background-image: url('svg/mapboxgl-ctrl-zoom-out.svg') !important;
+      }
+      .mapboxgl-ctrl-icon.mapboxgl-ctrl-compass > .mapboxgl-ctrl-compass-arrow {
+        background-image: url('svg/mapboxgl-ctrl-compass.svg') !important;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
