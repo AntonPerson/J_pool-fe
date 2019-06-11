@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@loaders.gl/core": "^1.1.1",
+    "@luma.gl/addons": "^7.1.1",
+    "@luma.gl/core": "^7.1.1",
     "d3-scale": "^3.0.0",
     "deck.gl": "^7.1.1",
     "immutable": "^4.0.0-rc.12",
