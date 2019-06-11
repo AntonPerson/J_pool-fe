@@ -14,16 +14,16 @@ export default function ControlPanel(props) {
   return (
     <aside className={styles.ControlPanel}>
       <div className={styles.toolbar}>
-        <button onClick={() => setCustomize(true)}>
-          Customize
-        </button>
+        <a href="#" onClick={() => setCustomize(true)}>
+          <img alt="Customize" src="./images/settings.svg" width="25" height="25" />
+        </a>
 
         <span className={styles['source-link']}>
           <a
             href="https://github.com/AntonPerson/J_pool-fe"
             target="_new"
           >
-            View Code ↗
+            <img alt="View Code at Github" src="./images/github-logo.svg" width="25" height="25" />
           </a>
         </span>
       </div>
