@@ -43,8 +43,8 @@ export default function ControlPanel(props) {
             Please select a neighborhood, building or connection to show more information
           </p>
           <p>
-            <img src="images/mouse-left-button.svg" title="left mouse button" width={25} height={25} /> to pan,
-            <img src="images/mouse-right-button.svg" title="right mouse button" width={25} height={25} /> to rotate
+            <img src="images/mouse-left-button.svg" title="left mouse button" alt="left mouse button" width={25} height={25} /> to pan,
+            <img src="images/mouse-right-button.svg" title="right mouse button" alt="right mouse button" width={25} height={25} /> to rotate
           </p>
         </div>
       )}

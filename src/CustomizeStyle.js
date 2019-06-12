@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import styles from './CustomizeStyle.module.css';
 import {fromJS} from 'immutable';
-import MAP_STYLE from './data/map-style-basic-v8.json';
+import MAP_STYLE from './data/map-style-minimo.json';
 
 const defaultMapStyle = fromJS(MAP_STYLE);
 
@@ -42,9 +42,9 @@ export default class CustomizeStyle extends PureComponent {
       water: '#DBE2E6',
       parks: '#E6EAE9',
       buildings: '#c0c0c8',
-      roads: '#ffffff',
-      labels: '#78888a',
-      background: '#EBF0F0'
+      roads: '#dedede',
+      labels: '#404040', //  '#78888a',
+      background: '#ffffff'
     }
   };
   _defaultLayers = defaultMapStyle.get('layers');
