@@ -4,7 +4,7 @@ import './App.css';
 import ReactMapGL, {StaticMap, NavigationControl} from 'react-map-gl';
 import DeckGL from '@deck.gl/react';
 import {ArcLayer, PolygonLayer} from '@deck.gl/layers';
-import {ScenegraphLayer} from '@deck.gl/mesh-layers';
+// import {ScenegraphLayer} from '@deck.gl/mesh-layers';
 import {registerLoaders} from '@loaders.gl/core';
 import {GLTFScenegraphLoader} from '@luma.gl/addons';
 
@@ -106,25 +106,25 @@ function App() {
       onClick,
     }),
 
-    new ScenegraphLayer({
-      id: 'scenegraph-layer',
-      data: [
-        {
-          position: [25.231676, 54.680370],
-          // color: [255, 0, 0],
-          scale: [25, 25, 25],
-        }, {
-          position: [25.230921, 54.681030],
-          scale: [50, 50, 50],
-        }, {
-          position: [25.231962, 54.679672],
-          scale: [25, 25, 25],
-        }
-      ],
-      getScale: d => d.scale || [100, 100, 100],
-      getOrientation: [0, 90, 90],
-      scenegraph: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF-Binary/Duck.glb',
-    }),
+    // new ScenegraphLayer({
+    //   id: 'scenegraph-layer',
+    //   data: [
+    //     {
+    //       position: [25.231676, 54.680370],
+    //       // color: [255, 0, 0],
+    //       scale: [25, 25, 25],
+    //     }, {
+    //       position: [25.230921, 54.681030],
+    //       scale: [50, 50, 50],
+    //     }, {
+    //       position: [25.231962, 54.679672],
+    //       scale: [25, 25, 25],
+    //     }
+    //   ],
+    //   getScale: d => d.scale || [100, 100, 100],
+    //   getOrientation: [0, 90, 90],
+    //   scenegraph: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF-Binary/Duck.glb',
+    // }),
   ];
 
   return (
